@@ -1,0 +1,22 @@
+<div class="game-container">
+  <!-- <header>Snake and Leader</header> -->
+  <div ><h1>Player 1: </h1><h2>{{player1Position}}</h2></div>
+  <div ><h1>Player 2: </h1><h2>{{player2Position}}</h2></div>
+  <div><h2>Current Player:</h2><h2>{{currentPlayer}}</h2></div>
+  <div class="dice" (click)="rollDice()">
+    <span>{{ diceNumber }}</span>
+  </div>
+  <div class="board">
+    <div *ngFor="let cell of board" class="cell">
+      <div *ngIf="player1Position === cell" class="player player1"></div>
+      <div *ngIf="player2Position === cell" class="player player2"></div>
+      <div *ngIf="isSnake(cell)" class="snake"></div>
+      <div *ngIf="isLadder(cell)" class="ladder"></div>
+      {{ cell }}
+    </div>
+  </div>
+
+  <!-- <div class="dice" (click)="rollDice()">
+    <span>{{ diceNumber }}</span>
+  </div> -->
+</div>
